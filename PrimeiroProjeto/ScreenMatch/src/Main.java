@@ -28,5 +28,9 @@ public class Main {
                 missão especializada que nenhum piloto vivo jamais viu.
                 """;
         System.out.println("Sinopse: " + sinopse);
+
+        int classificacao = (int) notaDoFilme / 2;
+
+        System.out.println("Classificação: " + classificacao + " estrelas");
     }
 }
