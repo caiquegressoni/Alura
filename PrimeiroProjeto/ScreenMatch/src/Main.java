@@ -10,7 +10,11 @@ public class Main {
         System.out.println("Incluído no plano: " + incluidoNoPlano);
 
         double avaliadorUm = 8.1;
+<<<<<<< HEAD
         double avaliadorDois = 9.5;
+=======
+        double avaliadorDois = 6.5;
+>>>>>>> 98d726ea3ea8df9ace19b048e8b3fa95d4900129
         double avaliadorTres = 7.9;
 
         double notaDoFilme = (avaliadorUm + avaliadorDois + avaliadorTres) / 3;
@@ -28,9 +32,14 @@ public class Main {
                 missão especializada que nenhum piloto vivo jamais viu.
                 """;
         System.out.println("Sinopse: " + sinopse);
+<<<<<<< HEAD
 
         int classificacao = (int) notaDoFilme / 2;
 
         System.out.println("Classificação do filme é " + classificacao + " estrelas");
     }
 }
+=======
+    }
+}
+>>>>>>> 98d726ea3ea8df9ace19b048e8b3fa95d4900129
