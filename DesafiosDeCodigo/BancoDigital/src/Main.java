@@ -6,7 +6,7 @@ public class Main {
         //TODO: cirar as seguintes funções; recebeTransferencia(), fazTransferencia(), enviaPix(), recebePix()
         String nomeCliente;
         String[] tipoConta = {"Corrente", "Poupança"};
-        double saldoInicial = 2.500;
+        double saldoInicial = 2500;
 
         System.out.println("****************Cadastro****************");
         System.out.println("Digite o nome do cliente");
@@ -27,23 +27,42 @@ public class Main {
             System.out.println("Opção inválida");
         }
 
-        System.out.println("Cadastro realizado com sucesso");
+        System.out.println("\nCadastro realizado com sucesso\n");
 
-        System.out.println("1 - Consultar Dados");
-        System.out.println("2 - Receber valor");
-        System.out.println("3 - Transferir valor");
-        System.out.println("4 - Sair");
+        String menu = """
+                "1 - Consultar dados
+                "2 - Receber valor
+                "3 - Transferir valor
+                "4 - Sair"
+                """;
 
-        int op = 1;
-        switch (op) {
-            case 1:
+        int op = 0;
+        while (op != 4) {
+            System.out.println(menu);
+            op = sc.nextInt();
+
+            if (op == 1) {
                 System.out.println("Nome do cliente: " + nomeCliente);
                 System.out.println("Tipo da conta: " + tipoSelecionado);
                 System.out.println("Saldo: " + saldoInicial);
-                break;
-            case 2:
-                //Passar as funções resposaveis por receber tranferencias
-                break;
+            } else if (op == 2) {
+                System.out.println("Informe o valor a ser recebido");
+                double valorRecebido = sc.nextDouble();
+                saldoInicial += valorRecebido;
+                System.out.println("Saldo após recebimento: "+saldoInicial);
+
+            } else if (op == 3) {
+                System.out.println("Qual valor deseja transferir");
+                double valorTranferido = sc.nextDouble();
+                if (valorTranferido > saldoInicial) {
+                    System.out.println("Você não possui saldo suficiente");
+                } else {
+                    saldoInicial -= valorTranferido;
+                    System.out.println("Saldo após transferencia: " + saldoInicial);
+                }
+            } else if (op != 4) {
+                System.out.println("Opção invalida");
+            }
         }
     }
 }
